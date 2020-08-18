@@ -12,7 +12,7 @@ class AlbumLoader(context: Context) : CursorLoader(
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) PROJECTION_29 else PROJECTION,
     null,
     null,
-    null
+    DEFAULT_ORDER_BY
 ) {
     companion object {
         private const val BUCKET_ID = "bucket_id"
