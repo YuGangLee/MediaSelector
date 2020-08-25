@@ -6,12 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.Observer
-import me.yugang.album.core.AlbumType
+import kotlinx.android.synthetic.main.activity_main.*
 import me.yugang.album.core.MediaSelector
-import me.yugang.album.core.bean.AlbumBean
-import me.yugang.album.core.loader.AlbumLoader
-import me.yugang.album.core.loader.MediaLoader
-import me.yugang.album.core.utils.UriUtils
 import pub.devrel.easypermissions.EasyPermissions
 
 class MainActivity : AppCompatActivity() {
@@ -26,7 +22,8 @@ class MainActivity : AppCompatActivity() {
                 1,
                 Manifest.permission.READ_EXTERNAL_STORAGE,
                 Manifest.permission.ACCESS_MEDIA_LOCATION,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.CAMERA
             )
         } else {
             EasyPermissions.requestPermissions(
@@ -34,8 +31,12 @@ class MainActivity : AppCompatActivity() {
                 "",
                 1,
                 Manifest.permission.READ_EXTERNAL_STORAGE,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.CAMERA
             )
+        }
+        tvTest.setOnClickListener {
+            MediaSelector.with(this).capture(0)
         }
     }
 
@@ -61,12 +62,10 @@ class MainActivity : AppCompatActivity() {
                     .newViewModelSelector()
                     .onAlbumResult(Observer {
                         it?.let { list ->
-                            Log.i("Lee", "albums--> $list")
                         }
                     })
                     .onMediaResult(Observer {
                         it?.let { list ->
-                            Log.i("Lee", "images--> $list")
                         }
                     })
                     .get()
