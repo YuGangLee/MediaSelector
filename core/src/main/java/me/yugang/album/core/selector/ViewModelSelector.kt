@@ -26,7 +26,7 @@ class ViewModelSelector internal constructor(private val context: Any) {
                 it.applicationContext = context.requireActivity().applicationContext
             }
         }
-        else -> throw IllegalArgumentException("context require Fragment or FragmentActivity")
+        else -> throw IllegalArgumentException("context require Fragment or AppCompatActivity")
     }
 
     fun onAlbumResult(onAlbumResult: Observer<List<AlbumBean>>): ViewModelSelector {

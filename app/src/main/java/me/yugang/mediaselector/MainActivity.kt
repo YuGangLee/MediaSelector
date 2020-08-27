@@ -1,6 +1,7 @@
 package me.yugang.mediaselector
 
 import android.Manifest
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -36,7 +37,7 @@ class MainActivity : AppCompatActivity() {
             )
         }
         tvTest.setOnClickListener {
-            MediaSelector.with(this).capture(0)
+            MediaSelector.with(this).takePictureWithoutSave(0)
         }
     }
 
@@ -47,6 +48,12 @@ class MainActivity : AppCompatActivity() {
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         test()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        Log.i("Lee", data?.extras.toString())
+        test.setImageBitmap(data?.getParcelableExtra("data") ?: return)
     }
 
     private fun test() {
