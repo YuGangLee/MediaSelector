@@ -18,14 +18,23 @@ import me.yugang.album.core.loader.MediaLoader
 import me.yugang.album.core.utils.UriUtils
 
 class MediaViewModel : ViewModel() {
+    /**
+     * 最新查询条件下的媒体内容
+     */
     internal val mediaLiveData = MutableLiveData<List<MediaBean>>()
         .also { it.value = listOf() }
 
+    /**
+     * 相册列表
+     */
     internal val albumLiveData = MutableLiveData<List<AlbumBean>>()
         .also { it.value = listOf() }
 
     internal lateinit var applicationContext: Context
 
+    /**
+     * 加载相册列表
+     */
     @MainThread
     fun loadImageAlbum() {
         val loader = AlbumLoader.newPhotoAlbumLoader(applicationContext)
@@ -47,6 +56,9 @@ class MediaViewModel : ViewModel() {
         }
     }
 
+    /**
+     * 加载相册列表
+     */
     @MainThread
     fun loadVideoAlbum() {
         val loader = AlbumLoader.newVideoAlbumLoader(applicationContext)

@@ -29,12 +29,16 @@ class MediaSelector {
         }
     }
 
-    fun newViewModelSelector() = ViewModelSelector(context)
+    /**
+     * 获取相册选择控制器(ViewModel模式)
+     * 一个Fragment或一个Activity中只会有一个ViewModel控制器
+     * */
+    fun getViewModelSelector() = ViewModelSelector(context)
 
     /**
      * 打开系统相机拍照，不保存至文件
      * 成功拍照后在onActivityResult中返回的Intent中将附带缩略图Bitmap数据
-     * 可通过 intent.extras.get("data") 获取缩略图
+     * 可通过intent.extras.get("data")获取缩略图
      */
     fun takePictureWithoutSave(requestCode: Int) {
         val activity = getActivity()

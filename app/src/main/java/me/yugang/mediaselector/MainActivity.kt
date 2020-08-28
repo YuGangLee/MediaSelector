@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
                 )
             ) {
                 MediaSelector.with(this)
-                    .newViewModelSelector()
+                    .getViewModelSelector()
                     .onAlbumResult(Observer {
                         it?.let { list ->
                         }
@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity() {
                 )
             ) {
                 MediaSelector.with(this)
-                    .newViewModelSelector()
+                    .getViewModelSelector()
                     .onAlbumResult(Observer { })
                     .onMediaResult(Observer {
                         it?.let { list ->
