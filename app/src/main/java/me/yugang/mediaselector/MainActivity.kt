@@ -2,11 +2,13 @@ package me.yugang.mediaselector
 
 import android.Manifest
 import android.content.Intent
+import android.graphics.drawable.BitmapDrawable
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.Observer
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_main.*
 import me.yugang.album.core.MediaSelector
 import pub.devrel.easypermissions.EasyPermissions
@@ -36,8 +38,21 @@ class MainActivity : AppCompatActivity() {
                 Manifest.permission.CAMERA
             )
         }
-        tvTest.setOnClickListener {
-            MediaSelector.with(this).takePictureWithoutSave(0)
+        btSelect.setOnClickListener {
+            MediaSelector.with(this).getViewModelSelector().onMediaResult {
+                if (!it.isNullOrEmpty()) {
+                    val media = it[0]
+                    Thread {
+                        val bitmap = Glide.with(this).asBitmap().load(media.uri).submit().get()
+                        runOnUiThread {
+                            test.setImageBitmap(bitmap)
+                        }
+                    }.start()
+                }
+            }.get().loadImages()
+        }
+        btCut.setOnClickListener {
+            clTest.background = BitmapDrawable(resources, test.getCutBitmap())
         }
     }
 
@@ -67,14 +82,14 @@ class MainActivity : AppCompatActivity() {
             ) {
                 MediaSelector.with(this)
                     .getViewModelSelector()
-                    .onAlbumResult(Observer {
+                    .onAlbumResult {
                         it?.let { list ->
                         }
-                    })
-                    .onMediaResult(Observer {
+                    }
+                    .onMediaResult {
                         it?.let { list ->
                         }
-                    })
+                    }
                     .get()
                     .loadImages()
             }
@@ -86,12 +101,12 @@ class MainActivity : AppCompatActivity() {
             ) {
                 MediaSelector.with(this)
                     .getViewModelSelector()
-                    .onAlbumResult(Observer { })
-                    .onMediaResult(Observer {
+                    .onAlbumResult { }
+                    .onMediaResult {
                         it?.let { list ->
                             Log.i("Lee", list.toString())
                         }
-                    })
+                    }
                     .get()
                     .loadImages()
             }

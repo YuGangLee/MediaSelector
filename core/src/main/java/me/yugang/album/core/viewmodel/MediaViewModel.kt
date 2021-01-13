@@ -81,12 +81,8 @@ class MediaViewModel : ViewModel() {
     }
 
     @MainThread
-    fun loadImages() {
-        loadImages(null)
-    }
-
-    @MainThread
-    fun loadImages(album: AlbumBean?) {
+    @JvmOverloads
+    fun loadImages(album: AlbumBean? = null) {
         val list = mutableListOf<MediaBean>()
         val loader = MediaLoader.newImageLoader(applicationContext, album)
         viewModelScope.launch(Dispatchers.IO) {
@@ -109,12 +105,8 @@ class MediaViewModel : ViewModel() {
     }
 
     @MainThread
-    fun loadVideos() {
-        loadVideos(null)
-    }
-
-    @MainThread
-    fun loadVideos(album: AlbumBean?) {
+    @JvmOverloads
+    fun loadVideos(album: AlbumBean? = null) {
         val list = mutableListOf<MediaBean>()
         val loader = MediaLoader.newVideoLoader(applicationContext, album)
         viewModelScope.launch(Dispatchers.IO) {

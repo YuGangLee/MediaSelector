@@ -2,27 +2,40 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clTest"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FF000000"
     tools:context=".MainActivity">
 
-    <ImageView
+    <me.yugang.album.extensions.SimpleImageCutView
         android:id="@+id/test"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitCenter"
+        android:layout_width="300dp"
+        android:layout_height="450dp"
+        android:padding="10dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintBottom_toTopOf="@id/btSelect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ContentDescription" />
 
-    <TextView
-        android:id="@+id/tvTest"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#00000000"
-        android:gravity="center"
-        android:text="Hello World!"
+    <Button
+        android:id="@+id/btSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Select Image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintRight_toLeftOf="@id/btCut" />
+
+    <Button
+        android:id="@+id/btCut"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Cut Image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/btSelect"
+        app:layout_constraintRight_toRightOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
