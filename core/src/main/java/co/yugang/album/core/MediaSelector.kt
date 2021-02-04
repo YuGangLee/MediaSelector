@@ -1,4 +1,4 @@
-package me.yugang.album.core
+package co.yugang.album.core
 
 import android.content.Context
 import android.content.Intent
@@ -9,7 +9,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
-import me.yugang.album.core.selector.ViewModelSelector
+import co.yugang.album.core.selector.ViewModelSelector
 import java.io.File
 import java.lang.IllegalArgumentException
 

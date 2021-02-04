@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="me.yugang.album.core">
+    package="co.yugang.album.core">
 
     <uses-feature
         android:name="android.hardware.camera"

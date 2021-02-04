@@ -1,14 +1,14 @@
-package me.yugang.album.core.selector
+package co.yugang.album.core.selector
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import me.yugang.album.core.bean.AlbumBean
-import me.yugang.album.core.bean.MediaBean
-import me.yugang.album.core.observer.AlbumObserver
-import me.yugang.album.core.observer.MediaObserver
-import me.yugang.album.core.viewmodel.MediaViewModel
+import co.yugang.album.core.bean.AlbumBean
+import co.yugang.album.core.bean.MediaBean
+import co.yugang.album.core.observer.AlbumObserver
+import co.yugang.album.core.observer.MediaObserver
+import co.yugang.album.core.viewmodel.MediaViewModel
 import java.lang.IllegalArgumentException
 
 class ViewModelSelector internal constructor(private val context: Any) {

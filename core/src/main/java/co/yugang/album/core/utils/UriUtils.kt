@@ -1,4 +1,4 @@
-package me.yugang.album.core.utils
+package co.yugang.album.core.utils
 
 import android.content.ContentUris
 import android.database.Cursor

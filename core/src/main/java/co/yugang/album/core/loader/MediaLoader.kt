@@ -1,11 +1,11 @@
-package me.yugang.album.core.loader
+package co.yugang.album.core.loader
 
 import android.content.Context
 import android.net.Uri
 import android.provider.MediaStore
 import androidx.loader.content.CursorLoader
-import me.yugang.album.core.DifferentialColumnName
-import me.yugang.album.core.bean.AlbumBean
+import co.yugang.album.core.DifferentialColumnName
+import co.yugang.album.core.bean.AlbumBean
 
 class MediaLoader : CursorLoader {
     companion object {

@@ -1,4 +1,4 @@
-package me.yugang.album.extensions
+package co.yugang.album.extensions
 
 import android.annotation.SuppressLint
 import android.content.Context

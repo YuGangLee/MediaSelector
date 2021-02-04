@@ -1,6 +1,6 @@
-package me.yugang.album.core.bean
+package co.yugang.album.core.bean
 
-import me.yugang.album.core.AlbumType
+import co.yugang.album.core.AlbumType
 
 data class AlbumBean(val type: AlbumType, val bucketId: Long, val bucketName: String?) {
     override fun equals(other: Any?): Boolean {

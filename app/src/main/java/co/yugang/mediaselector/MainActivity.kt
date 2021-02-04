@@ -1,4 +1,4 @@
-package me.yugang.mediaselector
+package co.yugang.mediaselector
 
 import android.Manifest
 import android.content.Intent
@@ -7,10 +7,9 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_main.*
-import me.yugang.album.core.MediaSelector
+import co.yugang.album.core.MediaSelector
 import pub.devrel.easypermissions.EasyPermissions
 
 class MainActivity : AppCompatActivity() {

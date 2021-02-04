@@ -8,7 +8,7 @@
     android:background="#FF000000"
     tools:context=".MainActivity">
 
-    <me.yugang.album.extensions.SimpleImageCutView
+    <co.yugang.album.extensions.SimpleImageCutView
         android:id="@+id/test"
         android:layout_width="300dp"
         android:layout_height="450dp"

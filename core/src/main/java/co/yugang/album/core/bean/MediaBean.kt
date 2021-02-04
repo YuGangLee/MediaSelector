@@ -1,7 +1,7 @@
-package me.yugang.album.core.bean
+package co.yugang.album.core.bean
 
 import android.net.Uri
-import me.yugang.album.core.MediaType
+import co.yugang.album.core.MediaType
 
 data class MediaBean(
     val mediaType: MediaType,

@@ -1,8 +1,8 @@
-package me.yugang.album.core.utils
+package co.yugang.album.core.utils
 
-import me.yugang.album.core.MimeType.MIME_IMAGE_START
-import me.yugang.album.core.MimeType.MIME_TYPE_GIF
-import me.yugang.album.core.MimeType.MIME_VIDEO_START
+import co.yugang.album.core.MimeType.MIME_IMAGE_START
+import co.yugang.album.core.MimeType.MIME_TYPE_GIF
+import co.yugang.album.core.MimeType.MIME_VIDEO_START
 
 internal object MimeUtils {
 

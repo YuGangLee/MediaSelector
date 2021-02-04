@@ -1,7 +1,7 @@
-package me.yugang.album.core.observer
+package co.yugang.album.core.observer
 
 import androidx.lifecycle.Observer
-import me.yugang.album.core.bean.AlbumBean
+import co.yugang.album.core.bean.AlbumBean
 
 abstract class AlbumObserver : Observer<List<AlbumBean>> {
     override fun onChanged(t: List<AlbumBean>?) {

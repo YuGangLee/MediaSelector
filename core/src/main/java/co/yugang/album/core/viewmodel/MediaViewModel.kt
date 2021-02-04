@@ -1,4 +1,4 @@
-package me.yugang.album.core.viewmodel
+package co.yugang.album.core.viewmodel
 
 import android.content.Context
 import android.provider.MediaStore
@@ -8,14 +8,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import me.yugang.album.core.AlbumType
-import me.yugang.album.core.DifferentialColumnName
-import me.yugang.album.core.MediaType
-import me.yugang.album.core.bean.AlbumBean
-import me.yugang.album.core.bean.MediaBean
-import me.yugang.album.core.loader.AlbumLoader
-import me.yugang.album.core.loader.MediaLoader
-import me.yugang.album.core.utils.UriUtils
+import co.yugang.album.core.AlbumType
+import co.yugang.album.core.DifferentialColumnName
+import co.yugang.album.core.MediaType
+import co.yugang.album.core.bean.AlbumBean
+import co.yugang.album.core.bean.MediaBean
+import co.yugang.album.core.loader.AlbumLoader
+import co.yugang.album.core.loader.MediaLoader
+import co.yugang.album.core.utils.UriUtils
 
 class MediaViewModel : ViewModel() {
     /**
