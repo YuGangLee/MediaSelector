@@ -23,7 +23,7 @@ class ViewModelSelector internal constructor(private val context: Any) {
         }
         is Fragment -> {
             ViewModelProvider(context).get(MediaViewModel::class.java).also {
-                it.applicationContext = context.requireActivity().applicationContext
+                it.applicationContext = context.requireContext().applicationContext
             }
         }
         else -> throw IllegalArgumentException("context require Fragment or AppCompatActivity")
