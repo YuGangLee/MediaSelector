@@ -19,6 +19,13 @@
 
  ### 文档
  #### 使用方式
+ ##### 导入
+
+ ```java
+    // 核心模块
+    implementation 'co.yugang:YGAlbum-Core:1.0.0'
+ ```
+
  ##### 获取相册/图片/视频
  ``` java
     // kotlin
