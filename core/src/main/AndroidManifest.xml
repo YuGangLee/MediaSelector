@@ -12,7 +12,7 @@
     <application>
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="MediaSelector.default.fileProvider"
+            android:authorities="${applicationId}.MediaSelector.default.fileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
