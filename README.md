@@ -23,7 +23,7 @@
 
  ``` groovy
     // 核心模块
-    implementation 'co.yugang:YGAlbum-Core:1.0.0'
+    implementation 'co.yugang:YGAlbum-Core:1.0.1'
  ```
 
  ##### 获取相册/图片/视频
