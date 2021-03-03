@@ -33,7 +33,7 @@ class MediaSelector {
      * 获取相册选择控制器(ViewModel模式)
      * 一个Fragment或一个Activity中只会有一个ViewModel控制器
      * */
-    fun getViewModelSelector() = ViewModelSelector(context)
+    fun viewModelSelector() = ViewModelSelector(context)
 
     /**
      * 打开系统相机拍照，不保存至文件

@@ -1,7 +1,9 @@
 package co.yugang.album.core.bean
 
 import android.net.Uri
+import android.os.Parcelable
 import co.yugang.album.core.MediaType
+import kotlinx.android.parcel.Parcelize
 
 /**
  * 媒体Bean
@@ -12,12 +14,13 @@ import co.yugang.album.core.MediaType
  *
  * @see MediaType
  */
+@Parcelize
 data class MediaBean(
     val mediaType: MediaType,
     val name: String,
     val uri: Uri,
     val mimeType: String
-) {
+) : Parcelable {
     override fun equals(other: Any?): Boolean {
         if (other is MediaBean) {
             return uri.toString() == other.uri.toString()

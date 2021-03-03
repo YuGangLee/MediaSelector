@@ -21,13 +21,13 @@
  #### 使用方式
  ##### 导入
 
- ```java
+ ``` groovy
     // 核心模块
     implementation 'co.yugang:YGAlbum-Core:1.0.0'
  ```
 
  ##### 获取相册/图片/视频
- ``` java
+ ``` kotlin
     // kotlin
     // ViewModel模式（需要依附于AppCompatActivity/Fragment）
     /**
@@ -37,7 +37,7 @@
      * !! 需要先将Fragment绑定至Activity之后再获取MediaViewModel
      */
     val mediaViewModel = MediaSelector.with(context) // context可以为AppCompatActivity/Fragment的子类
-        .getViewModelSelector()
+        .viewModelSelector()
         .onAlbumResult { list: -> 
             // list: 获取到的相册列表 List<AlbumBean>
         }
@@ -67,7 +67,7 @@
     mediaViewModel.loadImages(bean: AlbunBean?) // loadImages有两种重载方式：loadImages() / loadImages(album： AlbunBean?)
  ```
  ##### 拍照功能
- ```java
+ ``` kotlin
 
     /**
      * 检查当前设备相机是否可用

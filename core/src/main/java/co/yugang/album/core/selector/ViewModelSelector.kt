@@ -17,14 +17,10 @@ class ViewModelSelector internal constructor(private val context: Any) {
 
     private val mediaViewModel: MediaViewModel = when (context) {
         is AppCompatActivity -> {
-            ViewModelProvider(context).get(MediaViewModel::class.java).also {
-                it.applicationContext = context.applicationContext
-            }
+            ViewModelProvider(context).get(MediaViewModel::class.java)
         }
         is Fragment -> {
-            ViewModelProvider(context).get(MediaViewModel::class.java).also {
-                it.applicationContext = context.requireContext().applicationContext
-            }
+            ViewModelProvider(context).get(MediaViewModel::class.java)
         }
         else -> throw IllegalArgumentException("context require Fragment or AppCompatActivity")
     }
@@ -53,7 +49,7 @@ class ViewModelSelector internal constructor(private val context: Any) {
                 it.albumLiveData.observe(context, onAlbumResult)
                 it.mediaLiveData.observe(context, onMediaResult)
             }
-            else -> throw IllegalArgumentException("context require fragment or activity")
+            else -> throw IllegalArgumentException("context require Fragment or AppCompatActivity")
         }
     }
 }

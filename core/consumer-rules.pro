@@ -1,0 +1,1 @@
+-keep class co.yugang.album.core.** { *; }

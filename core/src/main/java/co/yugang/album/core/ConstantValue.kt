@@ -1,8 +1,11 @@
 package co.yugang.album.core
 
 import android.annotation.SuppressLint
+import android.app.Application
 import android.os.Build
 import android.provider.MediaStore
+
+var application: Application? = null
 
 object MimeType {
     const val MIME_IMAGE_START = "image"

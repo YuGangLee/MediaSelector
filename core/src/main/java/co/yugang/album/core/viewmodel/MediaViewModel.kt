@@ -1,6 +1,6 @@
 package co.yugang.album.core.viewmodel
 
-import android.content.Context
+import android.annotation.SuppressLint
 import android.provider.MediaStore
 import androidx.annotation.MainThread
 import androidx.lifecycle.MutableLiveData
@@ -15,7 +15,9 @@ import co.yugang.album.core.bean.AlbumBean
 import co.yugang.album.core.bean.MediaBean
 import co.yugang.album.core.loader.AlbumLoader
 import co.yugang.album.core.loader.MediaLoader
+import co.yugang.album.core.application
 import co.yugang.album.core.utils.UriUtils
+import java.lang.Exception
 
 class MediaViewModel : ViewModel() {
     /**
@@ -30,7 +32,8 @@ class MediaViewModel : ViewModel() {
     internal val albumLiveData = MutableLiveData<List<AlbumBean>>()
         .also { it.value = listOf() }
 
-    internal lateinit var applicationContext: Context
+    private val applicationContext = application
+        ?: throw RuntimeException("co.yugang.album.core.application is not be set, you should set it first")
 
     /**
      * 加载相册列表

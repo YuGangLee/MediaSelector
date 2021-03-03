@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             )
         }
         btSelect.setOnClickListener {
-            MediaSelector.with(this).getViewModelSelector().onMediaResult {
+            MediaSelector.with(this).viewModelSelector().onMediaResult {
                 if (!it.isNullOrEmpty()) {
                     val media = it[0]
                     Thread {
@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
                 )
             ) {
                 MediaSelector.with(this)
-                    .getViewModelSelector()
+                    .viewModelSelector()
                     .onAlbumResult {
                         it?.let { list ->
                         }
@@ -99,7 +99,7 @@ class MainActivity : AppCompatActivity() {
                 )
             ) {
                 MediaSelector.with(this)
-                    .getViewModelSelector()
+                    .viewModelSelector()
                     .onAlbumResult { }
                     .onMediaResult {
                         it?.let { list ->
