@@ -19,11 +19,11 @@
 
  ### 文档
  #### 使用方式
- ##### 导入
-
+ ##### 导入 
+ >$version的具体版本参见[更新日志](#更新日志)
  ``` groovy
-    // 核心模块
-    implementation 'co.yugang:YGAlbum-Core:1.0.1'
+    // 核心模块 
+    implementation 'co.yugang:YGAlbum-Core:$version'
  ```
 
  ##### 获取相册/图片/视频
@@ -100,3 +100,9 @@
      */
     MediaSelector.takePicture(requestCode: Int, fileUri: Uri?)
  ```
+
+ #### 更新日志
+ - release-1.0.2:   
+    更新了编译配置，kotlin生成的配置文件将以包名命名，减少可能发生的冲突情况
+ - release-1.0.1  
+    第一个稳定的正式版本
