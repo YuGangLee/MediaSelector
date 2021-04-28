@@ -17,9 +17,9 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class MediaBean(
     val mediaType: MediaType,
-    val name: String,
+    val name: String?,
     val uri: Uri,
-    val mimeType: String
+    val mimeType: String?
 ) : Parcelable {
     override fun equals(other: Any?): Boolean {
         if (other is MediaBean) {
